@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandera</title>
+</head>
+<body>
+    <h1>Hagamos un creeper</h1>
+
+    <canvas width="600" height="400">
+
+    </canvas>
+    <script>
+        var lienzo = document.querySelector("canvas");
+        var pincel = lienzo.getContext("2d");
+
+        pincel.fillStyle = 'darkgreen';
+        pincel.fillRect(200, 50, 350 ,300);
+
+//OJOS
+
+        pincel.fillStyle = 'black';
+        pincel.fillRect(250, 110, 90, 90);
+        pincel.fillRect(410, 110, 90, 90);
+
+//NARIZ
+
+        pincel.fillRect(340,200,70,100);
+
+//BOCA
+
+        pincel.fillRect(300, 240, 40, 110);
+        pincel.fillRect(410, 240, 40, 110)
+
+    </script>
+</body>
+</html>

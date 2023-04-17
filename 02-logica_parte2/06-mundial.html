@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial</title>
+</head>
+<body>
+    <h1>Mundial ⚽</h1>
+    <h3>🤓 💬 Iteraciones</h3>
+    <p>Una iteración es cuando un conjunto de instrucciones, características o 
+        actividades se repiten una o varias veces hasta que una condición se cumple o deja 
+        de cumplirse.</p>
+    <h3>¿cómo funciona la iteración o cómo se implementa?</h3>
+    <p>Hay dos tipos de loops que se utilizan en la construcción de los programas de código.</p>
+    <p><strong>👉 El bucle for:</strong> Este loop se utiliza para ejecutar un grupo específico de instrucciones hasta 
+        que se cumpla una condición en específica. <br>
+        <strong>👉 El bucle while:</strong> Es el que controla una serie de instrucciones que se repiten, 
+        siempre y cuando la condición sea verdadera.</p>
+
+    <script>
+
+        function imprimir(msg){
+            document.write(msg);
+        }
+
+        var mundialYear = 1930;
+
+        alert(`¿Sabías que?... El primer mundial fue en el año ${mundialYear}`);
+
+        //CUIDADO CON LAS CONDICIONES, PODRIA NUNCA ACABAR
+
+        imprimir("Ha habido mundiales en estos años: ");
+
+        while (mundialYear <= 2020){
+            imprimir(mundialYear + ", ");
+            mundialYear = mundialYear + 4;
+        }
+
+        //Interactuando con el usuario
+
+        mundialYear = 2022;
+        var limite = parseInt(prompt(`¿Hasta que año te gustaría saber que hay mundial?`));
+
+        imprimir("<br> <br> Habrá mundial los siguientes años: ");
+
+        while (mundialYear <= limite){
+            imprimir(mundialYear + ", ");
+            mundialYear = mundialYear + 4;
+        }
+
+    </script>
+</body>
+</html>

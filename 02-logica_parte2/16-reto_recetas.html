@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Recetas</title>
+</head>
+<body>
+    <h1>👨‍🍳 Recetas de Armando 🥘</h1>
+
+<script>
+
+    var ingredientes = [];
+    var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+    var contador = 1;
+
+    while( contador <= cantidad) {
+        var repet = false;
+        var ingrediente = prompt("Informe el ingrediente " + contador);
+
+        for( var i = 0; i <= ingredientes.length; i++){
+            if(ingredientes[i] == ingrediente){
+                repet = true;
+                alert(`Este ingrediente: "${ingrediente}" ya existe en la lista.`);
+                break;
+            }
+        }
+
+        if( !repet ){
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+    }
+
+    console.log(ingredientes);
+
+</script>
+</body>
+</html>

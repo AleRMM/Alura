@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Secreto</title>
+</head>
+<body>
+    <h1>ADIVINA EL SECRETO 🤫</h1>
+
+        <input type="text" style="border-radius: 5px; width: 200px; padding: 3px;">
+        <button  onclick="verificar()" style="background-color:#975aa3; 
+        border-color: rgb(192, 137, 197); color: rgb(255, 255, 255); 
+        padding: 3px; border-radius: 8px;">
+            Secreto
+        </button>
+
+    <script>
+
+        var secret = [3,5,7,9];
+
+        var input = document.querySelector("input");
+        var button = document.querySelector("button");
+        //esta otra linea hace que el input siempre este activo.
+        input.focus();
+
+        function sorteo(n){
+            var secretNumbers = [];
+            //Generamos numeros aleatorios random que se agregan a un array;
+            for(var i = 1; i <= n ; i++){
+                var random = Math.round(Math.random()*10);
+                var encontrado = false;
+                //Validamos que no agregue un 0 a nuestro array.
+                if(random != 0 ){
+                    //Validamos que no genere un numero aleatorio repetido a nuestro array.
+                    for(var j = 0; j < secretNumbers.length; j++){
+                        if(random == secretNumbers[j]){
+                            encontrado = true;
+                            break;
+                        }
+                    }
+                }
+                if( encontrado == false){
+                    secretNumbers.push(random);
+                }
+            }
+            return secretNumbers;
+        }
+
+        console.log(sorteo(5));
+
+
+        function verificar(){
+            var posicion = false;
+            
+            for(var i = 0; i <= secret.length ; i++){
+                if(parseInt(input.value) == secret[i]){
+                alert("Fuiste elegido para conocer el secreto ");
+                posicion = true;
+                break;
+                }
+            }
+
+            if( posicion == false){
+                alert("No eres digno de conocer el secreto.");
+            }
+
+            //esta línea nos limpia el campo input cada vez que se cumpla la funcion.
+            input.value = "";
+            input.focus();
+        }
+
+    </script>
+</body>
+</html>

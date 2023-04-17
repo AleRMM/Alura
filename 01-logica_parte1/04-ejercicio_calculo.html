@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Consumo</title>
+</head>
+<body>
+
+    <h1>¿Alcohol o Gasolina?</h1>
+
+    <script>
+        var tanque = 40;
+        var recorrido = 480;
+        var eficiencia = recorrido / tanque;
+
+        document.write(`🏎️ Tengo un tanque de ${tanque} L y recorreré ${recorrido} km <br>`);
+        document.write(`por lo que mi eficiencia fue de ${eficiencia} km/L 😎 <br>`);
+        document.write("<br> <br>")
+
+        recorrido = 300;
+        eficiencia = recorrido / tanque;
+
+        document.write("Suponiendo que usaré alcohol como combustible 🤔 <br>")
+        document.write(`la eficiencia es de: ${eficiencia} km/L 🤪 <br>`);
+
+    </script>
+</body>
+</html>

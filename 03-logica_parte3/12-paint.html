@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+<script>
+    //Inicializamos el Canvas.
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+    pincel.fillStyle = "Lavender";
+    pincel.fillRect(0, 0, 600, 400);
+
+    //CUADROS DE COLORES
+    var blue = 0;
+    var red = 30;
+    var green = 60;
+    var positiony = 0;
+    var size = 30;
+    var colorDef = "CornflowerBlue";
+
+    var paint = false;
+
+    function circle(x,y) {
+        if(paint) {
+            pincel.fillStyle = colorDef;
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 *2.14);
+            pincel.fill();
+        }
+    }
+
+    //Colocando paleta de colores.
+    function cuadrados(x,y,size, color){
+        pincel.fillStyle = color;
+        pincel.fillRect(x,y,size,size);
+    }
+
+    function paleta(){
+        cuadrados(blue, positiony, size, "CornflowerBlue");
+        cuadrados(red, positiony, size, "PaleVioletRed");
+        cuadrados(green, positiony, size, "MediumSeaGreen");
+    }
+
+    //Prohibiendo que se dibuje sobre la paleta de colores.
+    function block(ejeX, ejeY){
+        if((ejeX >= 0 && ejeX < ( 3*size + 5 ))
+            && (ejeY >= 0 && ejeY < (size + 5))){
+                return false;
+        } else {
+            return true;
+        }
+    }
+
+    function movimiento(e){
+        var x = e.pageX - pantalla.offsetLeft;
+        var y = e.pageY - pantalla.offsetTop;
+
+        if(block(x,y)){
+            circle(x,y, colorDef);
+        }
+    }
+
+    //Cambiando colores
+    function seleccion(e){
+        var x = e.pageX - pantalla.offsetLeft;
+        var y = e.pageY - pantalla.offsetTop;
+
+        if( y > positiony && y < (positiony + size)){
+            if(x > red && x < (red + size)){
+                colorDef = "PaleVioletRed";
+                console.log(colorDef);
+            } else if(x > green && x < (green + size)){
+                colorDef = "MediumSeaGreen";
+                console.log(colorDef);
+            }else if (x > blue && x < (blue + size)){
+                colorDef = "CornflowerBlue";
+                console.log(colorDef);
+            }
+        }
+    }
+
+    function dibuja() {
+        paint = true;
+    }
+
+    function noDibujes() {
+        paint = false;
+    }
+
+    //Onmousemove: Captura el movimiento del mouse.
+    // pantalla.onmousemove = circle;
+    pantalla.onmousemove = movimiento;
+    //Onmousedown: Ejecuta el código cuando el mouse esta presionado.
+    pantalla.onmousedown = dibuja;
+    //Onmouseup: Funciona cuando el botón del mouse NO esta siendo precionado.
+    pantalla.onmouseup = noDibujes;
+    paleta();
+    pantalla.onclick = seleccion;
+
+</script>
+</body>
+</html>

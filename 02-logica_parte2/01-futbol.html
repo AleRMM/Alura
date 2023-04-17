@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol</title>
+</head>
+<body>
+    <h1>⚽  Programa futbol.html  ⚽</h1>
+
+    <p>🤓 Escribe un programa que calcule las puntuaciones de un equipo en una liga, con las reglas del fútbol.<br><br>
+        En dónde un partido ganado son 3 puntos en una liga común y un partido empatado son 1 punto.</p>
+
+    <p>👉 El programa debe calcular que el usuario, coloque cuántos partidos ganó su equipo, 
+        en cuántos partidos empató el equipo. <br> <br> Y que al final nos devuelva el resultado con la operación realizada, 
+        (la multiplicación más la suma). </p>
+
+    <script>
+        var salto = "<br> <br>";
+
+        function imprimir(msg){
+            document.write(msg);
+        }
+
+        var equipo = prompt("Ingrese el nombre de su equipo");
+        var victorias = parseInt(prompt("Ingrese la cantidad de victorias que obtuvo"));
+        var empates = parseInt(prompt("Ingrese la cantidad de partidos que empato"));
+
+        var puntosTotales = victorias * 3 + empates;
+
+        imprimir(`<h3>El ${equipo} obtuvo un total de ${puntosTotales} puntos. 🚩</h3> <hr>`);
+
+        //Agregando condicionales al programa.
+
+        if(puntosTotales > 28){
+            imprimir(`<p>El ${equipo} mejoró en relación a los resultados del año pasado. 😎</p>`);
+        }else if(puntosTotales < 28){
+            imprimir(`<p>El ${equipo} empeoró en relación a los resultados del año pasado. 😞</p>`);
+        }else if(puntosTotales === 28){
+            imprimir(`<p>El ${equipo} mantiene los mismos resultados en relación a los resultados del año pasado. 😉</p>`);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="./contact.css">
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Contact Alura</title>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../product/style.css">
+    <link rel="stylesheet" href="./contact.css">
+</head>
+<body>
+    <header>
+        <div class="box">
+            <nav>
+                <ul>
+                    <li><a href="../home/index.html">Home</a></li>
+                    <li><a href="../product/products.html">Products</a></li>
+                    <li><a href="../contact/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <h1><img class="logo" src="../img/logo-blanco.png"></h1>
+        </div>
+    </header>
+
+    <main>
+        <form>
+            <label for="user"> Usuario: </label>
+            <input type="text" id="user" class="inpt" required placeholder="Escribe tu nombre">
+            <label for="mail"> Correo Electrónico: </label>
+            <input type="email" id="mail" class="inpt" required placeholder="(444) 679 1267">
+            <label for="tel"> Teléfono: </label>
+            <input type="tel" id="tel" class="inpt" required placeholder="barberia@alura.com">
+            <label for="msg"> Mensaje: </label>
+            <textarea id="msg" cols="70" rows="10"></textarea>
+            <fieldset>
+                <legend>¿Cómo te gustaría que te contactemos?</legend>
+
+                <label for="r-email"> 
+                    <input name="contact" type="radio" id="r-email" value="email">
+                    E-mail:
+                </label>
+
+                <label for="r-cel">
+                    <input name="contact" type="radio" id="r-cel" value="cell">
+                    Teléfono: 
+                </label>
+
+                <label for="r-whats">
+                    <input name="contact" type="radio" id="r-whats" value="whatsapp" checked>
+                    WhatsApp: 
+                </label>
+
+            </fieldset>
+            <fieldset>
+                <legend>¿En qué horario prefieres ser atendido?</legend>
+                <select id="">
+                    <option>Mañana</option>
+                    <option>Tarde</option>
+                    <option>Noche</option>
+                </select>
+            </fieldset>
+            <label class="checkbox"><input type="checkbox" checked>
+                ¿Le gustaría recibir novedades de la barbería Alura?
+            </label>
+            <input name="contact" type="submit" value="Enviar" class="send">
+        </form>
+        <table>
+            <thead>  
+                <tr>
+                    <th>Días</th>
+                    <th>Horario</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Lunes</td>
+                    <td>08:00 am - 20:00 pm</td>
+                </tr>
+                <tr>
+                    <td>Miércoles</td>
+                    <td>08:00 am - 20:00 pm</td>
+                </tr>
+                <tr>
+                    <td>Viernes</td>
+                    <td>08:00 am - 20:00 pm</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <img class="img2" src="../img/logo-blanco.png" alt="logo">
+        <p class="copy">© Copyright Barbería Alura ~ 2023</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel</title>
+</head>
+<body>
+    <h1>Pixel Art 🟥🎨</h1>
+
+    <canvas width="600" height="400">
+
+    </canvas>
+    <script>
+
+        function draw(x,y,color){
+
+            var lienzo = document.querySelector("canvas");
+            var pincel = lienzo.getContext("2d");
+
+            pincel.fillStyle = color;
+            pincel.fillRect(x,y,50,50);
+            pincel.strokeStyle = "black";
+            pincel.strokeRect(x,y,50,50);
+
+        }
+
+        // var i = 0;
+
+        // while(i < 600){
+        //     draw(i,0, "green");
+        //     draw(i,50, "yellow");
+        //     draw(i,100, "red");
+        //     i = i + 50;
+        // };
+
+        for(var i = 0; i < 600; i = i+50){
+            draw(i,0, "green");
+            draw(i,50, "yellow");
+            draw(i,100, "red")
+        };
+
+
+    </script>
+</body>
+</html>

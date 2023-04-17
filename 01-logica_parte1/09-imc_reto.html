@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    <h1>Reto: Calculando el IMC & Sacar promedio</h1>
+    <p>Escribe una funcion que calcule el IMC que devuelva el promedio del índice 
+        de masa corporal de dos personas.</p>
+
+    <script>
+
+        //Ejemplo 1:
+
+        function imprimir(msg){
+            document.write(msg + "<br><br>");
+        }
+
+        function calcularImc(peso, altura){
+            return(Math.round(peso / (altura*altura)));
+        }
+
+        var persona1 = calcularImc(90,1.78);
+        var persona2 = calcularImc(90,1.78);
+
+        imprimir(`🧑‍🤝‍🧑 El promedio calculado de "Lou & Sally" es : ${(persona1+persona2)/2} `);
+
+        //Ejemplo 2:
+
+        var peso = 75;
+        var altura = 1.90;
+        var imc = calcularImc(peso,altura);
+
+        imprimir(`😃 El IMC calculado es: ${imc} `)
+
+        //Utilizando Prompt
+
+        var nombre = prompt("Ingresa tu nombre");
+        var peso = prompt( nombre + ", Ingresa su peso");
+        var altura = prompt( nombre + ", Ingresa su altura");
+        var imc = calcularImc(peso,altura);
+
+        imprimir(`🌟 ${nombre}, tu índice de masa corporal es: ${imc}`)
+
+    </script>
+</body>
+</html>

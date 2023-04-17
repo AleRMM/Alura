@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media de Edad</title>
+</head>
+<body>
+    <h1>Calculando la media de edad de una familia</h1>
+    <script>
+
+        function imprimir(msg){
+            document.write(msg);
+            document.write("<br>")
+        }
+
+        var madre = 40;
+        var padre = 45;
+        var hija = 17;
+        var hijo = 14;
+
+        var suma = madre + padre + hija + hijo;
+        var media = suma / 4;
+
+        imprimir(`👨‍👨‍👧‍👧 La media de las edades de la familia es: ${media}`);
+
+        // Haciendo más interactivo el programa
+
+        var miembros = parseInt(prompt("¿Cuántos miembros hay en la familia?"));
+        var i =  1;
+        var total = 0;
+
+        while( i <= miembros){
+            var edad = parseInt(prompt("Ingrese las edades de cada miembro de la familia"));
+            total = total + edad;
+            i++;
+        }
+
+        var promedio = Math.round(total / miembros);
+
+        imprimir(`👩‍👩‍👧‍👦 La media de las edades de la familia es: ${promedio}`);
+
+        //Haciendo más interactivo el programa pero con for
+
+        var personas = parseInt(prompt("¿Cuántas personas hay en la familia?"));
+        var suma = 0;
+
+        for ( var i = 1; i <= personas; i++){
+            var info = parseInt(prompt("Ingrese las edades de cada miembro de la familia"));
+            suma += edad;
+        }
+
+        var promedio2 = Math.round(suma / personas);
+
+        imprimir(`👩‍👩‍👦 La media de las edades de la familia es: ${promedio2}`);
+
+    </script>
+</body>
+</html>

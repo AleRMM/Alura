@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de masa corporal</title>
+</head>
+<body>
+
+    <h1>Tabla sugerida por la OMS del Índice de masa corporal</h1>
+    <p>🤓 💬 Escribe un programa que calcule el ídice de masa corporal y nos imprima el estado 
+        de IMC de la persona segun la tabla de datos de la OMS. 🌎</p>
+    
+    <script>
+        var nombre = prompt("Bienvenido!! Por favor, ingrese su nombre");
+        var altura = prompt(`${nombre}, por favor, ingrese su altura en metros`);
+        var peso = prompt(`${nombre}, por favor, ingrese su peso en kilogramos`);
+
+        var imc = ((peso / (altura * altura)).toFixed(2));
+
+        function imprimir(msg){
+            document.write(msg);
+        }
+
+        imprimir(`<h3>${nombre} tu índice de masa corporal es de: ${imc}</h3>`);
+
+        if (imc < 18.5) {
+            imprimir(`<h3>🟡 ${nombre}, tu índice de masa corporal indica que estás bajo de peso.</h3>`);
+        } else if (imc >= 18.5 && imc <= 24.9) {
+            imprimir(`<h3>🟢 ${nombre}, tu índice de masa corporal indica que tu peso es normal.</h3>`);
+        } else if (imc >= 25 && imc <= 29.9) {
+            imprimir(`<h3>🟠 ${nombre}, tu índice de masa corporal indica que tienes sobrepeso.</h3>`);
+        } else if (imc >= 30) {
+            imprimir(`<h3>🔴 ${nombre}, tu índice de masa corporal indica que tienes obesidad.</h3>`);
+        }
+    </script>
+</body>
+</html>

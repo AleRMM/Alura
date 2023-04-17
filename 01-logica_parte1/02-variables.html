@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Variables</title>
+</head>
+<body>
+    <h1>Variable (var)</h1>
+
+    <p>Recordar que JS sí diferencía las mayúsculas de las minúsculas</p>
+    <p>Javascript tiene una ejecución secuencial o en cascada. Lo que quiere decir que ejecutará
+        el código de arriba hacia abajo. Haciendo que en caso de tener variables, el valor de
+        la línea 22 no sea afectado por el valor de la línea 29.
+    </p>
+    <p>Una vez declarada una variable, no es necesario volver a definirla, simplemente puede ser
+        llamada y modificada.
+    </p><br>
+
+    <script>
+
+        var year = 2018;
+
+        document.write(`En el año ${year}: <br> <br>`);
+        document.write(`🧍 Juanelo tiene ${year-1995} años <br>`);
+        document.write(`🧍‍♀️ Zorayda tiene ${year-1990} años <br>`);
+        document.write('<br> <br>')
+
+        //Cambiando el valor de la variable
+
+        year = 2030;
+
+        document.write('-------- CAMBIANDO VALOR DE (var) -------- <br><br>')
+        document.write(`En el año ${year}: <br> <br>`);
+        document.write(`🧍 Juanelo tiene ${year-1995} años <br>`);
+        document.write(`🧍‍♀️ Zorayda tiene ${year-1990} años <br>`);
+        document.write('<br> <br>')
+
+        //Obteniendo el promedio
+
+        year = 2023;
+
+        document.write('-------- PARTE 2 -------- <br> <br>')
+        document.write('🤓 Calculemos el promedio de edad de estas tres mujeres. <br> <br>');
+        document.write(`👱‍♀️ 💬 Hola! Mi nombre es Ana Pao y mi edad es: ${year - 2006} <br>`);
+        document.write(`👩‍🦰 💬 Hola! Mi nombre es Ximena y mi edad es: ${year - 2001} <br>`);
+        document.write(`👩‍🦱 💬 Hola! Mi nombre es Diana y mi edad es: ${year - 2003} <br><br>`);
+
+        var promedio = Math.round((17 + 22 + 20)/3);
+
+        document.write(`💬 El promedio de las edades es de: ${promedio} años`);
+        document.write('<br> <br>')
+
+        //Otro método para obtener el promedio:
+
+        var anaPao = 17;
+        var ximena = 22;
+        var diana = 20;
+        var names = "👱‍♀️ Ana Pao, " + "👩‍🦰 Ximena, " + "y 👩‍🦱 Diana";
+
+        promedio = Math.round((anaPao + ximena + diana)/3);
+        
+        document.write('-------- OTRO MÉTODO --------')
+        document.write('<br> <br>')
+        document.write(`🤓 El promedio de las edades de: <br> <br> ${names} 
+        es de: <br> <h3> 👉  ${promedio} años</h3>`);
+
+    </script>
+</body>
+</html>

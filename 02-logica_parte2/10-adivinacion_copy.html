@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina!</title>
+</head>
+<body>
+    <h1>ADIVINA UN NÚMERO</h1>
+
+    <script>
+        var num = Math.round(Math.random()*10);
+        var intento = 3;
+        var counter = 1;
+
+        function imprimir(msg){
+            document.write(msg);
+        }
+
+        while(counter <= intento){
+
+            var numero = parseInt(prompt("Hola!!! Ingresa un número entre 1 y 10."));
+
+            if(num === numero){
+                alert(`⭐ WOW!! Usted acertó!!!.`);
+                break;
+            }else {
+                alert(`😞 Lo sentimos, no acertaste.`);
+            }
+
+            counter++;
+        }
+
+        if(num === numero){
+            imprimir(`⭐ WOW!! Usted acertó en el intento: ${counter}. El número era ${num}`);
+        }else {
+            imprimir(`😞 Lo sentimos, no acertaste. El número era ${num}`);
+        }
+
+    </script>
+</body>
+</html>

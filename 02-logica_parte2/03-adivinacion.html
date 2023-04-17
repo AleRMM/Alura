@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina!</title>
+</head>
+<body>
+    <h1>ADIVINA UN NÚMERO</h1>
+
+    <script>
+        var num = Math.round(Math.random()*10);
+        var numero = parseInt(prompt("Hola!!! Ingresa un número entre 1 y 10."));
+
+        function imprimir(msg){
+            document.write(msg);
+            document.write("<br><br>");
+        }
+
+        if(num === numero){
+            imprimir("<h2>⭐ WOW!! Eres un vidente nato. 🔮</h2>");
+        }else {
+            imprimir(`<h2>Lo sentimos, no acertaste. 😞 El numero era ${num}</h2>`);
+        }
+    </script>
+</body>
+</html>

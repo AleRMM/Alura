@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrellas</title>
+</head>
+<body>
+    <h1>🌠 STARS 🌠</h1>
+
+    <script>
+
+        document.write("Iteración con for <br><br>");
+
+        for(var i = 1; i <= 3; i++){
+            //Queremos hacer que con solo una estrella se replique 10 veces.
+            for(var j = 1; j <= 10; j++){
+                document.write("⭐");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<br><br> Iteración con while <br><br>");
+
+        var count = 1;
+
+        while(count <= 3){
+            var counter = 1;
+
+            while(counter <= 10){
+                document.write("⭐");
+                counter++;
+            }
+            
+            document.write("<br>");
+            count++;
+        }
+
+    </script>
+</body>
+</html>

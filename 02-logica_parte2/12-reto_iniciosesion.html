@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+
+    <script>
+
+        for(var i = 1; i <= 3; i++){
+
+        var user = "alura";
+        var password = "alura321";
+
+        var use = prompt("Ingrese su usuario");
+        var pass = prompt("Ingrese su contraseña");
+
+            if( user == use && password == pass ) {
+                document.write(`<h1>Bienvenida ${user}<h1>`);
+                break;
+            } else {
+                if (i == 3) {
+                    alert("Agotaste el número permitido de intentos. Hemos enviado un correo al administrador.");
+                } else {
+                    alert("Inicio de sesión inválido. Por favor intente de nuevo.");
+                }
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>

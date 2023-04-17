@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de masa corporal</title>
+</head>
+<body>
+
+    <h1>Calculando el Índice de masa Corporal</h1>
+    <br><br>
+
+    <script>
+
+        var peso = 60;
+        var altura = 1.62;
+        var imc = Math.round(peso / (altura * altura));
+
+        function salto(){
+            document.write("<br> <br> <br> <hr> <br> <br>")
+        }
+
+        function imprimir(msg){
+            document.write(msg);
+            salto()
+        }
+
+        imprimir(`Mi índice de masa corporal es = ${imc} 🤰`)
+
+
+        //Cambiando el valor de las variables
+        peso = 80;
+        altura = 1.70;
+        var imc = Math.round(peso / (altura * altura));
+
+        imprimir(`01 - El índice de masa corporal de otra persona es = ${imc} `);
+
+
+        //Haciendo una funcion para que funcione en cualquier caso
+        function calcularImc(peso, altura){
+            var imc = Math.round(peso / (altura*altura));
+            imprimir(`02 - El índice de masa corporal de otra persona es = ${imc} `);
+        }
+
+        calcularImc(90, 1.65);
+
+        //Pasando parámetros de diferente valor
+        function calcularImc(peso, altura, nombre){
+            var imc = Math.round(peso / (altura*altura));
+            imprimir(`El índice de masa corporal de ${nombre} es = ${imc} `);
+        }
+
+        calcularImc(90, 1.65, "Monic");
+    </script>
+    
+</body>
+</html>

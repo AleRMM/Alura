@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click</title>
+</head>
+<body>
+
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");    
+        pincel.fillStyle = "Lavender";
+        pincel.fillRect(0,0,600,400); 
+
+        function mostrarMensaje(e){
+            /*Obtenemos las coordenadas del puntero X y Y restando 
+            las coordenadas con ayuda de las propiedades del canvas.*/
+            var x = e.pageX - pantalla.offsetLeft; 
+            var y = e.pageY - pantalla.offsetTop;
+            //Variable tipo date.
+            var d = new Date();
+            var hora = checkTime(d.getHours()) + ":" + checkTime(d.getMinutes()) + ":" + checkTime(d.getSeconds());
+
+            /*Verifica si el número de las horas, minutos o segundos, tiene un solo dígito, 
+            caso positivo le adiciona el cero en la frente para obtener el formato deseado 00:00:00*/
+            function checkTime(i){
+                if (i<10){
+                    i="0" + i;
+                }
+                return i;
+            }
+
+            alert (`Son las ${hora} y las coordenadas se encuentran en X = ( ${x} ) - Y = ( ${y} )`);
+        }
+        
+        //En este caso la funcion no debe de ser llamada con parentesis.
+        pantalla.onclick = mostrarMensaje;
+
+    </script> 
+</body>
+</html>
